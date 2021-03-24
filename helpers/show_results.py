@@ -1,15 +1,17 @@
+import sys
+import itertools
+import time
 import numpy as np
 import matplotlib.pyplot as plt
-import sys
+
 from sklearn.metrics import roc_curve, auc, f1_score, accuracy_score, log_loss, roc_auc_score, recall_score
 from sklearn.model_selection import train_test_split, ShuffleSplit, StratifiedKFold, StratifiedShuffleSplit, KFold, cross_val_score, cross_val_predict
 from sklearn.metrics import confusion_matrix, make_scorer
-from . import plotcfg
-import time
 from sklearn.model_selection import learning_curve
-from numpy import interp
-from tabulate import tabulate
-import itertools
+
+sys.path.append("..")
+from . import plotcfg
+
 
 columns = ['Method', 'auROC', 'Accuracy', 'Detection rate', 'False alarm rate']
 
@@ -232,7 +234,7 @@ def summary(title, clf, x_train, y_train, n_jobs=-1,
                     fpr, tpr, thresholds = roc_curve(y_train[test], probas_[:,1])
                     accuracies = tpr*0.5 + (1-fpr)*0.5
                     best_threshold.append(thresholds[np.argmax(accuracies)])
-                    mean_tpr += interp(mean_fpr, fpr, tpr)
+                    mean_tpr += np.interp(mean_fpr, fpr, tpr)
                     mean_tpr[0] = 0.0            
                 mean_tpr /= cv.n_splits
                 mean_tpr[-1] = 1.0
