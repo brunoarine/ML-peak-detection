@@ -37,13 +37,6 @@ git clone https://github.com/brunoarine/ML-peak-detection.git
 - numpy 1.20.1
 - scikit-learn 0.24.1
 
-## Requirements
-
-- scipy 1.6.1+
-- numpy 1.20.1+
-- matplotlib 3.3.4+
-- scikit-learn 0.24.1+
-
 ## Acknowledgements
 
 [Antonio Cesar Germano Martins](https://www.sorocaba.unesp.br/#!/antonio), outstanding supervisor and friend.
