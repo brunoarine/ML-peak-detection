@@ -15,7 +15,7 @@ The dataset used in this repository was artificially generated as to mimick real
 ## Project structure
 - [data/](./data/) - dataset in Python pickle format
 - [helpers/](./helpers/) - auxiliary functions used in the notebooks
-- [/notebooks/](./notebooks/)
+- [notebooks/](./notebooks/)
     - [01-about-the-data.ipynb](./notebooks/01-about-the-data.ipynb) - how the dataset was generated, including a few statistics about it
     - [02-feature-extraction.ipynb](./notebooks/02-feature-extraction.ipynb) - usage of wavelet transform to clean the spectra, and feature selection
     - [03-classification.ipynb](./notebooks/03-classification.ipynb) - actual results
